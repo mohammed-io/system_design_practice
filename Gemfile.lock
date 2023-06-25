@@ -1,0 +1,37 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    async (1.31.0)
+      console (~> 1.10)
+      nio4r (~> 2.3)
+      timers (~> 4.1)
+    console (1.17.2)
+      fiber-annotation
+      fiber-local
+    fiber-annotation (0.2.0)
+    fiber-local (1.0.0)
+    language_server-protocol (3.17.0.3)
+    minitest (5.18.1)
+    nio4r (2.5.9)
+    prettier_print (1.2.1)
+    ruby (0.1.0)
+    ruby-lsp (0.5.1)
+      language_server-protocol (~> 3.17.0)
+      sorbet-runtime
+      syntax_tree (>= 6.1.1, < 7)
+    sorbet-runtime (0.5.10885)
+    syntax_tree (6.1.1)
+      prettier_print (>= 1.2.0)
+    timers (4.3.5)
+
+PLATFORMS
+  arm64-darwin-22
+
+DEPENDENCIES
+  async (~> 1.31)
+  minitest (~> 5.18)
+  ruby
+  ruby-lsp
+
+BUNDLED WITH
+   2.4.3
