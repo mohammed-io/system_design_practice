@@ -3,12 +3,12 @@ require 'async'
 
 # Used by Amazon and Stripe
 class TokenBucket
-  TOTAL_TOKENS = 4
+  MAX_TOKENS = 4
 
   attr_reader :tokens
 
   def initialize
-    @tokens = TOTAL_TOKENS
+    @tokens = MAX_TOKENS
   end
 
   def handle(_)
@@ -22,7 +22,7 @@ class TokenBucket
 
   def refill!
     @tokens += 1
-    @tokens = TOTAL_TOKENS if @tokens > TOTAL_TOKENS
+    @tokens = MAX_TOKENS if @tokens > MAX_TOKENS
   end
 
   def enough_tokens?
