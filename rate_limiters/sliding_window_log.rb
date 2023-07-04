@@ -24,10 +24,7 @@ class SlidingWindowLog
   def handle(_)
     @log << FakeTime.timestamp
 
-    @log.reject! { |timestamp| p(current_window - timestamp >= WINDOW_SIZE_IN_SECONDS) }
-    puts @log.inspect
-    puts current_window
-    puts '-----'
+    @log.reject! { |timestamp| current_window - timestamp >= WINDOW_SIZE_IN_SECONDS }
 
     if @log.size <= MAX_REQUESTS_PER_WINDOW
       true
