@@ -1,15 +1,6 @@
 require 'minitest/autorun'
 require 'async'
-
-class FakeTime
-  def self.timestamp
-    @timestamp ||= 0
-  end
-
-  def self.advance(seconds = 1)
-    @timestamp = timestamp + seconds
-  end
-end
+require './fake_time'
 
 class SlidingWindowLog
   attr_reader :log
